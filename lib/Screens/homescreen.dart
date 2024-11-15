@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myfirebase/Screens/custom_dialog.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -8,6 +9,10 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+ final TextEditingController _taskController=TextEditingController();
+  void insertFunction(){
+
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +22,11 @@ class _HomeScreenState extends State<HomeScreen> {
         centerTitle: true,
       ),
      floatingActionButton: FloatingActionButton(
-      onPressed: (){},
+      onPressed: (){
+        CustomDialog(text: 'Add new Task',
+         controller:_taskController ,
+          isConfirm: insertFunction);
+      },
       child:const Text('add'),
       ),
 
