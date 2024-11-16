@@ -10,8 +10,19 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
  final TextEditingController _taskController=TextEditingController();
-  void insertFunction(){
+  void insertItem(){
+           Navigator.of(context).pop(); 
 
+  }
+    void _showAddTaskDialog() {
+    showDialog(
+      context: context,
+      builder: (context) => CustomDialog(
+        text: 'Add New Task',
+        controller: _taskController,
+        isConfirm: insertItem,
+      ),
+    );
   }
   @override
   Widget build(BuildContext context) {
@@ -23,11 +34,10 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
      floatingActionButton: FloatingActionButton(
       onPressed: (){
-        CustomDialog(text: 'Add new Task',
-         controller:_taskController ,
-          isConfirm: insertFunction);
+       _showAddTaskDialog();
       },
-      child:const Text('add'),
+      backgroundColor: Colors.blue,
+      child:const Icon(Icons.add),
       ),
 
     );

@@ -20,7 +20,8 @@ class CustomDialog extends StatelessWidget {
       TextButton(onPressed: (){
       Navigator.of(context).pop(); 
       }, child:const Text('Cancel')),
-      TextButton(onPressed: isConfirm,
+      TextButton(
+        onPressed: isConfirm,
        child:const Text('OK'))
      ],
     );
