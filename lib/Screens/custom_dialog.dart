@@ -12,7 +12,9 @@ class CustomDialog extends StatelessWidget {
       title: Text(text),
      content: TextFormField(
       controller: controller,
+      maxLines: 4,
     decoration:const InputDecoration(
+      border: OutlineInputBorder(),
       hintText: 'Add new todo'
     ),
      ),
